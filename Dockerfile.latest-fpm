@@ -15,5 +15,6 @@ RUN set -ex; \
     apt-get install -y --no-install-recommends \
         libxml2-dev unzip \
     ; \
-    docker-php-ext-install soap; 
+    docker-php-ext-install soap; \
+    ln -s /usr/bin/composer /usr/bin/composer.phar;
 
