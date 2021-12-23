@@ -14,14 +14,17 @@ x-environment: &common-vars
 services:
   roundcube:
     image: neomediatech/roundcube:latest-fpm
+    #image: neomediatech/roundcube:latest
     container_name: roundcube
     hostname: roundcube
     <<: *default-opts    
     ports:
       - 9001:9000
+      #- 81:80
     volumes:
       - config:/var/roundcube/config
       - html:/var/www/html
+      - pgp_keys:/var/www/roundcube_pgp_keys/
       #- php_config:/usr/local/etc/php/conf.d/zzz_roundcube-custom.ini:ro
       #- logs:/var/log
       - /etc/mime.types:/etc/mime.types:ro
@@ -39,6 +42,35 @@ services:
       ROUNDCUBEMAIL_SKIN: "${ROUNDCUBEMAIL_SKIN:-elastic}"
       #ROUNDCUBEMAIL_DEFAULT_HOST: "${ROUNDCUBEMAIL_DEFAULT_HOST:-tls://mail.example.org}"
       #ROUNDCUBEMAIL_SMTP_SERVER: "${ROUNDCUBEMAIL_SMTP_SERVER:-tls://mail.example.org}"
+  redis:
+    image: redis:alpine
+    container_name: redis
+    hostname: redis
+    <<: *default-opts    
+    volumes:
+      - redis:/data
+      #- logs:/var/log
+
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/locale.gen:/etc/locale.gen:ro
+    environment:
+      << : *common-vars
+  radicale:
+    image: neomediatech/radicale:latest
+    container_name: radicale
+    hostname: radicale
+    <<: *default-opts    
+    volumes:
+      - radicale:/data
+      #- logs:/var/log
+
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/locale.gen:/etc/locale.gen:ro
+    environment:
+      << : *common-vars
+
 
 volumes:
   config:
@@ -53,6 +85,25 @@ volumes:
       type: none
       o: bind
       device: ${STACK_BASE_PATH}/www/html
+  pgp_keys:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${STACK_BASE_PATH}/www/roundcube_pgp_keys
+  redis:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${STACK_BASE_PATH}/redis/data
+  radicale:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${STACK_BASE_PATH}/radicale/data
+
 #  php_config:
 #    driver: local
 #    driver_opts:
