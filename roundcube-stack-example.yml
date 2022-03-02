@@ -13,18 +13,20 @@ x-environment: &common-vars
 
 services:
   roundcube:
-    image: neomediatech/roundcube:latest-fpm
-    #image: neomediatech/roundcube:latest
+    #image: neomediatech/roundcube:latest-fpm
+    image: neomediatech/roundcube:latest
     container_name: roundcube
     hostname: roundcube
     <<: *default-opts    
     ports:
-      - 9001:9000
-      #- 81:80
+      #- 9001:9000
+      - 81:80
     volumes:
       - config:/var/roundcube/config
       - html:/var/www/html
       - pgp_keys:/var/www/roundcube_pgp_keys/
+      - tmp:/tmp/roundcube-temp
+      - db:/var/roundcube/db
       #- php_config:/usr/local/etc/php/conf.d/zzz_roundcube-custom.ini:ro
       #- logs:/var/log
       - /etc/mime.types:/etc/mime.types:ro
@@ -42,6 +44,7 @@ services:
       ROUNDCUBEMAIL_SKIN: "${ROUNDCUBEMAIL_SKIN:-elastic}"
       #ROUNDCUBEMAIL_DEFAULT_HOST: "${ROUNDCUBEMAIL_DEFAULT_HOST:-tls://mail.example.org}"
       #ROUNDCUBEMAIL_SMTP_SERVER: "${ROUNDCUBEMAIL_SMTP_SERVER:-tls://mail.example.org}"
+      ROUNDCUBEMAIL_UPLOAD_MAX_FILESIZE: "${ROUNDCUBEMAIL_UPLOAD_MAX_FILESIZE:-20M}"
   redis:
     image: redis:alpine
     container_name: redis
@@ -70,7 +73,7 @@ services:
       - /etc/locale.gen:/etc/locale.gen:ro
     environment:
       << : *common-vars
-
+      IMAP_HOST: "${IMAP_HOST:-10.2.0.1}"
 
 volumes:
   config:
@@ -103,6 +106,18 @@ volumes:
       type: none
       o: bind
       device: ${STACK_BASE_PATH}/radicale/data
+  tmp:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${STACK_BASE_PATH}/var/tmp
+  db:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${STACK_BASE_PATH}/var/db
 
 #  php_config:
 #    driver: local
