@@ -14,3 +14,19 @@ Legend:
 - '-': Not scanned
 - '0': Clean (no security findings detected)
 
+-----------------------------------
+ven 25 lug 2025, 15:16:23, UTC --- ghcr.io/neomediatech/roundcube:1.6.x-apache
+
+Report Summary
+
+┌────────────────────────────────────────────────────────────┬─────────────────┬─────────────────┬─────────┐
+│                           Target                           │      Type       │ Vulnerabilities │ Secrets │
+├────────────────────────────────────────────────────────────┼─────────────────┼─────────────────┼─────────┤
+│ ghcr.io/neomediatech/roundcube:1.6.x-apache (debian 12.11) │     debian      │        0        │    -    │
+├────────────────────────────────────────────────────────────┼─────────────────┼─────────────────┼─────────┤
+│ usr/src/roundcubemail/vendor/composer/installed.json       │ composer-vendor │        0        │    -    │
+└────────────────────────────────────────────────────────────┴─────────────────┴─────────────────┴─────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
