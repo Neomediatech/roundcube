@@ -2,3 +2,4 @@ ven 25 lug 2025, 15:13:05, UTC --- ghcr.io/neomediatech/roundcube:latest-fpm UPD
 ven 25 lug 2025, 15:16:23, UTC --- ghcr.io/neomediatech/roundcube:1.6.x-apache UPDATED (image build needed: true)
 ven 25 lug 2025, 15:19:25, UTC --- ghcr.io/neomediatech/roundcube:1.5.x-fpm UPDATED (image build needed: true)
 ven 25 lug 2025, 15:22:04, UTC --- ghcr.io/neomediatech/roundcube:1.5.x-apache UPDATED (image build needed: true)
+ven 25 lug 2025, 15:23:20, UTC --- ghcr.io/neomediatech/roundcube:latest UPDATED (image build needed: true)
