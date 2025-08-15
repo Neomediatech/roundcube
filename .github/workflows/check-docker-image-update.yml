@@ -26,8 +26,6 @@ jobs:
     #uses: Neomediatech/gh-workflows/.github/workflows/check-and-build-docker-images.yml@main
     with:
       base-image: roundcube/roundcubemail
-      package-name: neomediatech/roundcube
-      derived-image-prefix: ghcr.io/neomediatech/roundcube
       force-build: "${{ github.event.inputs.force-build }}"
       update-image: "true"
       image-type: "roundcube"
