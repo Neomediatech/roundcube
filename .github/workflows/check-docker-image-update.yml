@@ -28,7 +28,8 @@ jobs:
       base-image: roundcube/roundcubemail
       force-build: "${{ github.event.inputs.force-build }}"
       update-image: "true"
-      image-type: "roundcube"
+      package-to-check: "ROUNDCUBEMAIL_VERSION"
+      image-type: "meta"
     secrets:
       NOTIFY_CMD: ${{ secrets.NOTIFY_CMD }}
       NOTIFY_UP: ${{ secrets.NOTIFY_UP }}
