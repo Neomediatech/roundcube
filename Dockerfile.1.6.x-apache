@@ -4,7 +4,8 @@ ENV VERSION=$ROUNDCUBEMAIL_VERSION \
     SERVICE=roundcube
 
 LABEL org.opencontainers.image.source=https://github.com/Neomediatech/${SERVICE} \
-      org.opencontainers.package.name="${SERVICE}"
+      org.opencontainers.package.name="${SERVICE}" \
+      it.neomediatech.app-label=meta
 
 RUN set -ex; \
     apt-get update; \
