@@ -1,11 +1,11 @@
-mer 20 ago 2025, 20:36:58, CEST --- ghcr.io/neomediatech/roundcube:1.5.x-apache
+ven 22 ago 2025, 11:55:02, CEST --- ghcr.io/neomediatech/roundcube:1.5.x-apache
 
 Report Summary
 
 ┌────────────────────────────────────────────────────────────┬─────────────────┬─────────────────┬─────────┬───────────────────┐
 │                           Target                           │      Type       │ Vulnerabilities │ Secrets │ Misconfigurations │
 ├────────────────────────────────────────────────────────────┼─────────────────┼─────────────────┼─────────┼───────────────────┤
-│ ghcr.io/neomediatech/roundcube:1.5.x-apache (debian 11.11) │     debian      │       19        │    -    │         -         │
+│ ghcr.io/neomediatech/roundcube:1.5.x-apache (debian 11.11) │     debian      │       20        │    -    │         -         │
 ├────────────────────────────────────────────────────────────┼─────────────────┼─────────────────┼─────────┼───────────────────┤
 │ usr/src/roundcubemail/vendor/composer/installed.json       │ composer-vendor │        0        │    -    │         -         │
 ├────────────────────────────────────────────────────────────┼─────────────────┼─────────────────┼─────────┼───────────────────┤
@@ -27,7 +27,7 @@ To disable this notice, set the TRIVY_DISABLE_VEX_NOTICE environment variable.
 
 ghcr.io/neomediatech/roundcube:1.5.x-apache (debian 11.11)
 ==========================================================
-Total: 19 (HIGH: 19, CRITICAL: 0)
+Total: 20 (HIGH: 20, CRITICAL: 0)
 
 ┌───────────────┬────────────────┬──────────┬────────┬───────────────────┬──────────────────┬──────────────────────────────────────────────────────────────┐
 │    Library    │ Vulnerability  │ Severity │ Status │ Installed Version │  Fixed Version   │                            Title                             │
@@ -92,7 +92,10 @@ Total: 19 (HIGH: 19, CRITICAL: 0)
 │               │ CVE-2025-49812 │          │        │                   │                  │ httpd: HTTP Session Hijack via a TLS upgrade                 │
 │               │                │          │        │                   │                  │ https://avd.aquasec.com/nvd/cve-2025-49812                   │
 ├───────────────┼────────────────┤          │        ├───────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
-│ libgnutls30   │ CVE-2025-32990 │          │        │ 3.7.1-5+deb11u7   │ 3.7.1-5+deb11u8  │ gnutls: Vulnerability in GnuTLS certtool template parsing    │
+│ libgnutls30   │ CVE-2025-32988 │          │        │ 3.7.1-5+deb11u7   │ 3.7.1-5+deb11u8  │ gnutls: Vulnerability in GnuTLS otherName SAN export         │
+│               │                │          │        │                   │                  │ https://avd.aquasec.com/nvd/cve-2025-32988                   │
+│               ├────────────────┤          │        │                   │                  ├──────────────────────────────────────────────────────────────┤
+│               │ CVE-2025-32990 │          │        │                   │                  │ gnutls: Vulnerability in GnuTLS certtool template parsing    │
 │               │                │          │        │                   │                  │ https://avd.aquasec.com/nvd/cve-2025-32990                   │
 ├───────────────┼────────────────┤          │        ├───────────────────┼──────────────────┼──────────────────────────────────────────────────────────────┤
 │ libpq5        │ CVE-2025-8714  │          │        │ 13.21-0+deb11u1   │ 13.22-0+deb11u1  │ postgresql: PostgreSQL code execution in restore operation   │
@@ -117,14 +120,14 @@ See https://avd.aquasec.com/misconfig/ds002
 
 
 -------------------------------------------------------
-mer 20 ago 2025, 20:37:25, CEST --- ghcr.io/neomediatech/roundcube:1.5.x-fpm
+ven 22 ago 2025, 11:55:05, CEST --- ghcr.io/neomediatech/roundcube:1.5.x-fpm
 
 Report Summary
 
 ┌───────────────────────────────────────────────────────────┬─────────────────┬─────────────────┬─────────┬───────────────────┐
 │                          Target                           │      Type       │ Vulnerabilities │ Secrets │ Misconfigurations │
 ├───────────────────────────────────────────────────────────┼─────────────────┼─────────────────┼─────────┼───────────────────┤
-│ ghcr.io/neomediatech/roundcube:1.5.x-fpm (debian 11.11)   │     debian      │        3        │    -    │         -         │
+│ ghcr.io/neomediatech/roundcube:1.5.x-fpm (debian 11.11)   │     debian      │        4        │    -    │         -         │
 ├───────────────────────────────────────────────────────────┼─────────────────┼─────────────────┼─────────┼───────────────────┤
 │ usr/src/roundcubemail/vendor/composer/installed.json      │ composer-vendor │        0        │    -    │         -         │
 ├───────────────────────────────────────────────────────────┼─────────────────┼─────────────────┼─────────┼───────────────────┤
@@ -146,12 +149,15 @@ To disable this notice, set the TRIVY_DISABLE_VEX_NOTICE environment variable.
 
 ghcr.io/neomediatech/roundcube:1.5.x-fpm (debian 11.11)
 =======================================================
-Total: 3 (HIGH: 3, CRITICAL: 0)
+Total: 4 (HIGH: 4, CRITICAL: 0)
 
 ┌─────────────┬────────────────┬──────────┬────────┬───────────────────┬─────────────────┬────────────────────────────────────────────────────────────┐
 │   Library   │ Vulnerability  │ Severity │ Status │ Installed Version │  Fixed Version  │                           Title                            │
 ├─────────────┼────────────────┼──────────┼────────┼───────────────────┼─────────────────┼────────────────────────────────────────────────────────────┤
-│ libgnutls30 │ CVE-2025-32990 │ HIGH     │ fixed  │ 3.7.1-5+deb11u7   │ 3.7.1-5+deb11u8 │ gnutls: Vulnerability in GnuTLS certtool template parsing  │
+│ libgnutls30 │ CVE-2025-32988 │ HIGH     │ fixed  │ 3.7.1-5+deb11u7   │ 3.7.1-5+deb11u8 │ gnutls: Vulnerability in GnuTLS otherName SAN export       │
+│             │                │          │        │                   │                 │ https://avd.aquasec.com/nvd/cve-2025-32988                 │
+│             ├────────────────┤          │        │                   │                 ├────────────────────────────────────────────────────────────┤
+│             │ CVE-2025-32990 │          │        │                   │                 │ gnutls: Vulnerability in GnuTLS certtool template parsing  │
 │             │                │          │        │                   │                 │ https://avd.aquasec.com/nvd/cve-2025-32990                 │
 ├─────────────┼────────────────┤          │        ├───────────────────┼─────────────────┼────────────────────────────────────────────────────────────┤
 │ libpq5      │ CVE-2025-8714  │          │        │ 13.21-0+deb11u1   │ 13.22-0+deb11u1 │ postgresql: PostgreSQL code execution in restore operation │
@@ -176,7 +182,7 @@ See https://avd.aquasec.com/misconfig/ds002
 
 
 -------------------------------------------------------
-mer 20 ago 2025, 20:37:14, CEST --- ghcr.io/neomediatech/roundcube:1.6.x-apache
+ven 22 ago 2025, 11:55:20, CEST --- ghcr.io/neomediatech/roundcube:1.6.x-apache
 
 Report Summary
 
@@ -192,7 +198,7 @@ Legend:
 - '0': Clean (no security findings detected)
 
 -------------------------------------------------------
-mer 20 ago 2025, 20:37:31, CEST --- ghcr.io/neomediatech/roundcube:latest-fpm
+ven 22 ago 2025, 11:55:13, CEST --- ghcr.io/neomediatech/roundcube:latest-fpm
 
 Report Summary
 
@@ -208,7 +214,7 @@ Legend:
 - '0': Clean (no security findings detected)
 
 -------------------------------------------------------
-mer 20 ago 2025, 20:37:25, CEST --- ghcr.io/neomediatech/roundcube:latest
+ven 22 ago 2025, 11:55:14, CEST --- ghcr.io/neomediatech/roundcube:latest
 
 Report Summary
 
