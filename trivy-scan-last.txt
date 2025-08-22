@@ -1,4 +1,4 @@
-ven 22 ago 2025, 12:08:48, CEST --- ghcr.io/neomediatech/roundcube:1.5.x-apache
+ven 22 ago 2025, 12:25:26, CEST --- ghcr.io/neomediatech/roundcube:1.5.x-apache
 
 Report Summary
 
@@ -120,7 +120,7 @@ See https://avd.aquasec.com/misconfig/ds002
 
 
 -------------------------------------------------------
-ven 22 ago 2025, 12:09:13, CEST --- ghcr.io/neomediatech/roundcube:1.5.x-fpm
+ven 22 ago 2025, 12:25:28, CEST --- ghcr.io/neomediatech/roundcube:1.5.x-fpm
 
 Report Summary
 
@@ -182,7 +182,7 @@ See https://avd.aquasec.com/misconfig/ds002
 
 
 -------------------------------------------------------
-ven 22 ago 2025, 12:09:12, CEST --- ghcr.io/neomediatech/roundcube:1.6.x-apache
+ven 22 ago 2025, 12:25:31, CEST --- ghcr.io/neomediatech/roundcube:1.6.x-apache
 
 Report Summary
 
@@ -198,7 +198,7 @@ Legend:
 - '0': Clean (no security findings detected)
 
 -------------------------------------------------------
-ven 22 ago 2025, 12:09:08, CEST --- ghcr.io/neomediatech/roundcube:latest-fpm
+ven 22 ago 2025, 12:25:35, CEST --- ghcr.io/neomediatech/roundcube:latest-fpm
 
 Report Summary
 
@@ -214,7 +214,7 @@ Legend:
 - '0': Clean (no security findings detected)
 
 -------------------------------------------------------
-ven 22 ago 2025, 12:09:14, CEST --- ghcr.io/neomediatech/roundcube:latest
+ven 22 ago 2025, 12:25:28, CEST --- ghcr.io/neomediatech/roundcube:latest
 
 Report Summary
 
